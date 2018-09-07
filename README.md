@@ -1,5 +1,7 @@
 ## Rails Blog
 
+Start a development server with: `$ rails server`
+
 **Screenshots**
 
 ![screenshot 1](https://raw.githubusercontent.com/derekbtw/rails-dark-blog/master/screenshot-1.png)
