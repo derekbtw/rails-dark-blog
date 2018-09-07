@@ -1,0 +1,23 @@
+<div class="card shadow-sm fadeInUp">
+  <div class="card-body">
+    <p class="card-text">
+      <%# <strong>Name:</strong> %>
+      <span class="font-weight-bold comments-name">
+        <%= comment.commenter %>
+      </span>
+    </p>
+    <p class="card-text">
+      <%# <strong>Comment:</strong> %>
+      <blockquote class="blockquote border-left pl-3 comments-body">
+        <%= comment.body %>
+      </blockquote>
+    </p>
+
+    <p class="card-text">
+      <%= link_to 'Delete Comment', [comment.article, comment],
+                  :class => 'btn btn-sm btn-link text-hover-danger delete',
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </p>
+  </div>
+</div>

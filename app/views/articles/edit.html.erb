@@ -1,0 +1,6 @@
+<div class="container py-5">
+  <%= link_to '× Cancel', articles_path, :class => 'btn btn-outline-danger mb-4 close' %>
+  <h1 class="pb-4">Edit: <span class="font-weight-light"><%= @article.title %></span></h1>
+
+  <%= render 'form' %>
+</div>

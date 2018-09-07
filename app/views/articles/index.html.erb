@@ -1,0 +1,27 @@
+<div class="container py-5">
+  <h1 class="pb-4">Blog</h1>
+
+  <%= link_to 'New article', new_article_path, :class => 'btn btn-sm btn-link text-hover-primary' %>
+
+  <% @articles.each do |article| %>
+    <article class="card my-5 shadow-sm article fadeInUp">
+      <div class="card-body">
+          <h5 class="card-title article-title">
+            <%= link_to article.title, article_path(article) %>
+          </h5>
+          <!---->
+          <p class="card-text article-text">
+            <%= article.text %>
+          </p>
+          <p class="card-text text-right">
+            <%= link_to 'View', article_path(article), :class => 'btn btn-sm btn-link' %>
+            <%= link_to 'Edit', edit_article_path(article), :class => 'btn btn-sm btn btn-link text-hover-info mx-2' %>
+            <%= link_to 'Delete', article_path(article),
+                    :class => 'btn btn-sm btn-link text-hover-danger',
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+          </p>
+      </div>
+    </article>
+  <% end %>
+</div>

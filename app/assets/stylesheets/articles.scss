@@ -1,0 +1,341 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/sf-text.css);
+
+$bg: #000;
+$font: "SF UI Text", "Roboto", "Segoe UI", Arial, sans-serif;
+
+$pink: #fa114f;
+$red: #ff3b30;
+$orange: #ff9500;
+$yellow: #ffe620;
+$green: #04de71;
+$teal: #00f5ea;
+$cyan: #5ac8fa;
+$blue: #2094fa;
+$purple: #787aff;
+$white: #f2f4ff;
+$gray: #292a2f;
+$light-gray: #36383f;
+
+$primary: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$info: $cyan;
+
+//-----------------------
+
+
+body {
+  color: #fff;
+  background-color: $bg;
+  font-family: $font;
+}
+
+h1, h2, h3, h4, h5, 
+.h1, .h2, .h3, .h4, .h5,
+.font-weight-bold {
+  font: {
+    weight: 800;
+    family: $font
+  }
+}
+
+.text {
+  &-white {
+    color: #fff !important;
+  }
+  &-gray,
+  &-muted {
+    color: $gray !important;
+  }
+  &-primary,
+  &-blue {
+    color: $blue !important;
+  }
+  &-success,
+  &-green {
+    color: $green !important;
+  }
+  &-info,
+  &-cyan {
+    color: $cyan !important;
+  }
+  &-pink {
+    color: $pink !important;
+  }
+  &-danger,
+  &-red {
+    color: $red !important;
+  }
+  &-warning,
+  &-yellow {
+    color: $yellow !important;
+  }
+  &-orange {
+    color: $orange !important;
+  }
+  &-teal {
+    color: $teal !important;
+  }
+  &-purple {
+    color: $purple !important;
+  }
+}
+
+a, .btn {
+  color: #fff;
+  transition: all 200ms ease-in-out;
+  border-bottom: 2px solid rgba(#fff, 0.25);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff !important;
+    border-bottom: 2px solid #fff;
+    text-decoration: none;
+  }
+}
+
+.btn {
+  font-weight: 700;
+
+  &-sm {
+    font-weight: 600;
+  }
+
+  &-link {
+    color: #fff;
+    border: 0;
+    border-bottom: 2px solid rgba(#fff, 0.25);
+    text-decoration: none;
+    border-radius: 0;
+
+    &:hover, &:focus, &:active {
+      color: #fff !important;
+      border-bottom: 2px solid #fff;
+      text-decoration: none;
+    }
+
+    // Text hover mixin
+    @mixin textHover($color) {
+      color: #fff;
+      border-bottom-color: rgba($color, 0.5);
+      &:hover {
+        color: $color !important;
+        border-bottom: 2px solid $color !important;
+      }
+    }
+
+    &.text-hover-danger {
+      @include textHover($red);
+    }
+    &.text-hover-warning {
+      @include textHover($warning);
+    }
+    &.text-hover-primary {
+      @include textHover($primary);
+    }
+    &.text-hover-success {
+      @include textHover($success);
+    }
+    &.text-hover-info {
+      @include textHover($info);
+    }
+  }
+
+  @mixin btnOutline($color) {
+    color: $color !important;
+    border: 2px solid $color;
+    &:hover, &:focus, &:active {
+      color: #fff !important;
+      background-color: $color !important;
+      border-color: $color !important;
+    }
+  }
+
+  &-outline-primary {
+    @include btnOutline($primary);
+  }
+
+  &-outline-danger {
+    @include btnOutline($danger);
+  }
+}
+
+.card {
+  background-color: $gray;
+  border: 2px solid rgba(#fff, 0.25);
+  border-radius: 3px;
+}
+
+article,
+.article {
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+.article {
+  &-title {
+    a {
+      display: inline-block;
+      margin-left: -20px;
+      margin-bottom: 0;
+      transform: translateY(-20px);
+      border-bottom: 2px solid rgba(#fff, 0.25);
+      padding: 1.25rem;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        border-bottom-color: #fff;
+      }
+    }
+  }
+
+  &-text {
+    display: block;
+  }
+}
+
+.border,
+.border-top,
+.border-bottom,
+.border-left,
+.border-right {
+  border-color: rgba(#fff, 0.25) !important;
+}
+
+.rounded {
+  border-radius: 3px !important;
+}
+
+.container {
+  max-width: 1060px;
+}
+
+.comments {
+  color: #fff;
+
+  &-name {
+    color: rgba(#fff, 0.75);
+
+    &:after {
+      content: "\21B4";
+      font-weight: lighter !important;
+    }
+  }
+
+  &-body {
+    color: #fff;
+  }
+}
+
+.close {
+  text-shadow: none;
+  opacity: 1 !important;
+
+  &:first-letter {
+    line-height: 0;
+  }
+}
+
+input,
+textarea {
+  &.form-control {
+    color: #fff;
+    background-color: $gray;
+    border-color: $gray;
+    border-radius: 0.25rem;
+    transition: all 200ms ease-in-out;
+
+    &:focus {
+      color: #fff;
+      background-color: $light-gray;
+      border-color: $light-gray;
+    }
+  }
+}
+
+label {
+  color: rgba(#fff, 0.75);
+}
+
+hr {
+  border-top: 1px solid $gray;
+}
+
+.blockquote {
+  font-size: 1.1rem;
+}
+
+.fadeInUp {
+  -webkit-animation-duration: 650ms;
+  animation-duration: 650ms;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0,100px,0);
+    transform: translate3d(0,100px,0);
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-duration: 650ms;
+  animation-duration: 650ms;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.github {
+  display: inline-block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 16px;
+  right: 16px;
+
+  a {
+    border: 0;
+
+    &:hover {
+      .octicon {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.octicon {
+  vertical-align: text-bottom;
+  display: inline-block;
+  fill: rgba(#fff, 0.7);
+  transition: fill 200ms ease-in-out;
+}

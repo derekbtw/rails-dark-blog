@@ -1,0 +1,11 @@
+{
+  "name": "rails-dark-blog",
+  "private": true,
+  "dependencies": {},
+  "version": "1.0.0",
+  "description": "A dark blog in Rails.",
+  "main": "bin/rails",
+  "repository": "https://github.com/derekbtw/rails-dark-blog",
+  "author": "Derek Bytheway <derekbtw@gmail.com>",
+  "license": "MIT"
+}
