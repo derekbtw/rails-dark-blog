@@ -1,4 +1,4 @@
-## Rails Blog
+## Just a simple Rails blog
 
 Start a development server with: `$ rails server`
 
